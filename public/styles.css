@@ -487,10 +487,18 @@ textarea {
     border-radius: 18px;
   }
 
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(6, 14, 23, 0.44) 0%, rgba(6, 14, 23, 0.58) 46%, rgba(6, 14, 23, 0.84) 100%),
+      linear-gradient(90deg, rgba(6, 14, 23, 0.38) 0%, rgba(6, 14, 23, 0.16) 52%, rgba(6, 14, 23, 0.42) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg?width=1600")
+        center top / cover no-repeat;
+  }
+
   .hero-copy {
     padding: 18px 16px 8px;
     border-radius: 18px;
-    background: linear-gradient(180deg, rgba(8, 17, 27, 0.54), rgba(8, 17, 27, 0.24));
+    background: linear-gradient(180deg, rgba(8, 17, 27, 0.22), rgba(8, 17, 27, 0.08));
     backdrop-filter: blur(4px);
   }
 
@@ -620,6 +628,14 @@ textarea {
 
   .hero-copy {
     padding: 16px 14px 6px;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(6, 14, 23, 0.34) 0%, rgba(6, 14, 23, 0.5) 44%, rgba(6, 14, 23, 0.82) 100%),
+      linear-gradient(90deg, rgba(6, 14, 23, 0.28) 0%, rgba(6, 14, 23, 0.08) 50%, rgba(6, 14, 23, 0.34) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg?width=1600")
+        58% top / cover no-repeat;
   }
 
   h1 {

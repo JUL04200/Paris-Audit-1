@@ -117,7 +117,7 @@ function handleContact(request, response) {
         return;
       }
 
-      const recipientEmail = process.env.CONTACT_TO_EMAIL || "PARIS.AUDIT@AOL.COM";
+      const recipientEmail = process.env.CONTACT_TO_EMAIL || "INFO@PARISAUDIT.COM";
       const contact = {
         id: Date.now(),
         createdAt: new Date().toISOString(),

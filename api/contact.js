@@ -20,7 +20,7 @@ module.exports = (request, response) => {
     return;
   }
 
-  const recipientEmail = process.env.CONTACT_TO_EMAIL || "PARIS.AUDIT@AOL.COM";
+  const recipientEmail = process.env.CONTACT_TO_EMAIL || "INFO@PARISAUDIT.COM";
 
   response.status(200).json({
     message: "Votre demande a bien ete preparee.",
