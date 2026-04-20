@@ -530,8 +530,7 @@ textarea {
   }
 
   .brand-text small {
-    font-size: 0.82rem;
-    line-height: 1.4;
+    display: none;
   }
 
   .site-nav {
