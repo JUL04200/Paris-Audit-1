@@ -306,6 +306,11 @@ button {
   margin-bottom: 20px;
 }
 
+.section-heading h2 {
+  max-width: 18ch;
+  text-align: left;
+}
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
