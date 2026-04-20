@@ -601,19 +601,19 @@ textarea {
   .hero-card {
     padding: 14px 16px;
     gap: 6px;
+    width: auto;
+    max-width: 100%;
   }
 
   .hero-card ul {
     margin: 6px 0 0;
     padding-left: 16px;
     line-height: 1.5;
+    font-size: 0.95rem;
   }
 
   .hero-note {
-    margin-top: 4px;
-    font-size: 0.88rem;
-    line-height: 1.35;
-    opacity: 0.9;
+    display: none;
   }
 
   .cards-grid,
@@ -658,12 +658,14 @@ textarea {
     padding: 12px 14px;
   }
 
-  .hero-card ul {
-    font-size: 0.95rem;
+  .card-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
   }
 
-  .hero-note {
-    font-size: 0.84rem;
+  .hero-card ul {
+    font-size: 0.9rem;
+    line-height: 1.42;
   }
 
   .hero::before {
