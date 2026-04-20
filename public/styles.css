@@ -258,7 +258,9 @@ button {
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-self: start;
+  min-height: auto;
 }
 
 .hero-card ul {
@@ -278,6 +280,7 @@ button {
 
 .hero-note {
   color: var(--muted);
+  margin-top: 18px;
 }
 
 .section {
@@ -590,6 +593,21 @@ textarea {
   .contact-form,
   .spotlight {
     padding: 18px;
+  }
+
+  .hero-card {
+    gap: 8px;
+  }
+
+  .hero-card ul {
+    margin: 10px 0 0;
+    line-height: 1.7;
+  }
+
+  .hero-note {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .cards-grid,
