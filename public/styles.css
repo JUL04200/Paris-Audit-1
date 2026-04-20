@@ -125,7 +125,7 @@ body {
   background:
     linear-gradient(90deg, rgba(6, 14, 23, 0.9) 0%, rgba(6, 14, 23, 0.7) 34%, rgba(6, 14, 23, 0.46) 58%, rgba(6, 14, 23, 0.8) 100%),
     linear-gradient(180deg, rgba(4, 10, 18, 0.24), rgba(4, 10, 18, 0.62)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg?width=1600")
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg")
       center center / cover no-repeat;
   box-shadow: var(--shadow);
   z-index: -2;
@@ -146,7 +146,6 @@ body {
   padding: 26px 24px;
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(8, 17, 27, 0.32), rgba(8, 17, 27, 0.16));
-  backdrop-filter: blur(2px);
   min-width: 0;
 }
 
@@ -497,7 +496,7 @@ textarea {
     background:
       linear-gradient(180deg, rgba(6, 14, 23, 0.2) 0%, rgba(6, 14, 23, 0.34) 42%, rgba(6, 14, 23, 0.68) 100%),
       linear-gradient(90deg, rgba(6, 14, 23, 0.16) 0%, rgba(6, 14, 23, 0.04) 52%, rgba(6, 14, 23, 0.18) 100%),
-      url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg?width=1600")
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg")
         54% top / cover no-repeat;
   }
 
@@ -505,7 +504,6 @@ textarea {
     padding: 18px 16px 8px;
     border-radius: 18px;
     background: linear-gradient(180deg, rgba(8, 17, 27, 0.12), rgba(8, 17, 27, 0.03));
-    backdrop-filter: blur(2px);
   }
 
   .site-header {
@@ -672,7 +670,7 @@ textarea {
     background:
       linear-gradient(180deg, rgba(6, 14, 23, 0.16) 0%, rgba(6, 14, 23, 0.3) 42%, rgba(6, 14, 23, 0.64) 100%),
       linear-gradient(90deg, rgba(6, 14, 23, 0.1) 0%, rgba(6, 14, 23, 0.02) 50%, rgba(6, 14, 23, 0.12) 100%),
-      url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg?width=1600")
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg")
         56% top / cover no-repeat;
   }
 
