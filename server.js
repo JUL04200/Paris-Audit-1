@@ -29,6 +29,10 @@ function ensureStorage() {
   }
 }
 
+function canWriteToLocalStorage() {
+  return !process.env.VERCEL;
+}
+
 function sendJson(response, statusCode, payload) {
   response.writeHead(statusCode, {
     "Content-Type": "application/json; charset=utf-8"
@@ -77,6 +81,10 @@ function buildMailtoLink({ email, name, company, phone, message }) {
 }
 
 function saveContact(contact) {
+  if (!canWriteToLocalStorage()) {
+    return;
+  }
+
   const existing = JSON.parse(fs.readFileSync(CONTACTS_FILE, "utf8"));
   existing.push(contact);
   fs.writeFileSync(CONTACTS_FILE, JSON.stringify(existing, null, 2), "utf8");
@@ -146,7 +154,9 @@ function resolvePath(urlPath) {
   return path.join(PUBLIC_DIR, safePath);
 }
 
-ensureStorage();
+if (canWriteToLocalStorage()) {
+  ensureStorage();
+}
 
 const server = http.createServer((request, response) => {
   if (request.method === "POST" && request.url === "/api/contact") {
