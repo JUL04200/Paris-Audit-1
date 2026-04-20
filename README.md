@@ -32,6 +32,6 @@ Le projet est compatible avec Vercel :
 Pour changer l'adresse email de destination, definir la variable d'environnement :
 
 ```powershell
-$env:CONTACT_TO_EMAIL="amazondU16@gmail.com"
+$env:CONTACT_TO_EMAIL="PARIS.AUDIT@AOL.COM"
 node server.js
 ```
