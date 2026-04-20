@@ -261,12 +261,13 @@ button {
   justify-content: flex-start;
   align-self: start;
   min-height: auto;
+  gap: 12px;
 }
 
 .hero-card ul {
-  margin: 18px 0 0;
+  margin: 10px 0 0;
   padding-left: 18px;
-  line-height: 1.9;
+  line-height: 1.65;
   color: var(--white);
 }
 
@@ -280,7 +281,9 @@ button {
 
 .hero-note {
   color: var(--muted);
-  margin-top: 18px;
+  margin-top: 2px;
+  font-size: 0.96rem;
+  line-height: 1.45;
 }
 
 .section {
@@ -596,18 +599,21 @@ textarea {
   }
 
   .hero-card {
-    gap: 8px;
+    padding: 14px 16px;
+    gap: 6px;
   }
 
   .hero-card ul {
-    margin: 10px 0 0;
-    line-height: 1.7;
+    margin: 6px 0 0;
+    padding-left: 16px;
+    line-height: 1.5;
   }
 
   .hero-note {
-    margin-top: 10px;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    margin-top: 4px;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    opacity: 0.9;
   }
 
   .cards-grid,
@@ -646,6 +652,18 @@ textarea {
 
   .hero-copy {
     padding: 16px 14px 6px;
+  }
+
+  .hero-card {
+    padding: 12px 14px;
+  }
+
+  .hero-card ul {
+    font-size: 0.95rem;
+  }
+
+  .hero-note {
+    font-size: 0.84rem;
   }
 
   .hero::before {
