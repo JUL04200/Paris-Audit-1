@@ -82,6 +82,7 @@ body {
 .brand-text small,
 .site-nav a,
 .hero-text,
+.trust-line,
 .hero-note,
 .intro-panel p,
 .service-card p,
@@ -202,6 +203,13 @@ button {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 26px;
+}
+
+.trust-line {
+  margin: 18px 0 0;
+  max-width: 54ch;
+  font-weight: 600;
+  color: #d8e2ee;
 }
 
 .button {
@@ -565,6 +573,7 @@ textarea {
   }
 
   .hero-text,
+  .trust-line,
   .intro-panel p,
   .service-card p,
   .spotlight-copy p,
