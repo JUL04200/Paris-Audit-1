@@ -178,8 +178,7 @@ body {
   background:
     linear-gradient(90deg, rgba(6, 14, 23, 0.9) 0%, rgba(6, 14, 23, 0.7) 34%, rgba(6, 14, 23, 0.46) 58%, rgba(6, 14, 23, 0.8) 100%),
     linear-gradient(180deg, rgba(4, 10, 18, 0.24), rgba(4, 10, 18, 0.62)),
-    url("/place-francois-1er.jpg")
-      center center / cover no-repeat;
+    url("/place-francois-1er.jpg") center center / cover no-repeat;
   box-shadow: var(--shadow);
   z-index: -2;
 }
@@ -565,108 +564,105 @@ textarea {
 
 @media (max-width: 640px) {
   .page-shell {
-    width: min(100% - 20px, 1180px);
-    margin: 16px auto 36px;
+    width: min(100% - 18px, 1180px);
+    margin: 10px auto 24px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .brand {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brand-logo {
+    gap: 5px;
+    align-items: center;
+  }
+
+  .brand-logo-main {
+    font-size: 1.18rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .brand-sub-text {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .brand-line {
+    width: 16px;
+  }
+
+  .brand-bottom-line {
+    width: 12px;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    font-size: 0.88rem;
+    overflow: visible;
+  }
+
+  .site-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    text-align: center;
+    white-space: normal;
+    padding: 8px 10px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .hero {
-    padding: 18px 0 12px;
-    gap: 18px;
+    padding: 10px 0 6px;
+    gap: 14px;
     min-height: auto;
   }
 
   .hero::before,
   .hero::after {
-    border-radius: 18px;
+    border-radius: 20px;
   }
 
   .hero::before {
     background:
-      linear-gradient(180deg, rgba(6, 14, 23, 0.2) 0%, rgba(6, 14, 23, 0.34) 42%, rgba(6, 14, 23, 0.68) 100%),
-      linear-gradient(90deg, rgba(6, 14, 23, 0.16) 0%, rgba(6, 14, 23, 0.04) 52%, rgba(6, 14, 23, 0.18) 100%),
-      url("/place-francois-1er.jpg")
-        54% top / cover no-repeat;
+      linear-gradient(180deg, rgba(6, 14, 23, 0.22) 0%, rgba(6, 14, 23, 0.38) 42%, rgba(6, 14, 23, 0.7) 100%),
+      linear-gradient(90deg, rgba(6, 14, 23, 0.18) 0%, rgba(6, 14, 23, 0.05) 52%, rgba(6, 14, 23, 0.18) 100%),
+      url("/place-francois-1er.jpg") 54% top / cover no-repeat;
   }
 
   .hero-copy {
-    padding: 24px 20px 18px;
-    border-radius: 22px;
-    background: linear-gradient(180deg, rgba(8, 17, 27, 0.18), rgba(8, 17, 27, 0.05));
-  }
-
-  .site-header {
-    gap: 16px;
-    padding: 18px 18px 16px;
-    border-radius: 22px;
-  }
-
-  .brand {
-    align-items: flex-start;
-  }
-
-  .brand-logo {
-    gap: 6px;
-  }
-
-  .brand-logo-main {
-    font-size: 1.54rem;
-    letter-spacing: 0.12em;
-  }
-
-  .brand-sub-text {
-    font-size: 0.72rem;
-    letter-spacing: 0.28em;
-  }
-
-  .brand-line {
-    width: 28px;
-  }
-
-  .brand-bottom-line {
-    width: 22px;
-  }
-
-  .site-nav {
-    gap: 10px;
-    font-size: 0.95rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 2px;
-    scrollbar-width: none;
-  }
-
-  .site-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .site-nav a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    min-height: 0;
-    text-align: left;
-    white-space: nowrap;
-    padding: 9px 12px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.06);
+    padding: 22px 18px 14px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(8, 17, 27, 0.24), rgba(8, 17, 27, 0.08));
   }
 
   h1 {
-    font-size: clamp(2.85rem, 14vw, 4.2rem);
-    line-height: 0.92;
-    max-width: 9.5ch;
+    font-size: clamp(2.2rem, 11vw, 3rem);
+    line-height: 0.96;
+    max-width: 10.5ch;
   }
 
   h2 {
-    font-size: clamp(2.15rem, 11vw, 3rem);
-    line-height: 0.96;
+    font-size: clamp(1.8rem, 9vw, 2.3rem);
+    line-height: 1;
     max-width: 100%;
   }
 
   h3 {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
   }
 
   .hero-text,
@@ -677,28 +673,31 @@ textarea {
   .values-list p,
   .contact-copy p,
   .contact-card p,
+  .confidence-item span,
   label,
   input,
   textarea,
   button {
-    font-size: 1rem;
-    line-height: 1.65;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 10px;
+    margin-top: 22px;
   }
 
   .button {
     width: 100%;
-    padding: 14px 18px;
+    padding: 13px 16px;
   }
 
   .hero-card,
   .intro-panel,
+  .confidence-item,
+  .service-card,
   .spotlight,
   .contact-card,
   .contact-form,
@@ -708,36 +707,31 @@ textarea {
 
   .hero-card,
   .intro-panel,
+  .confidence-item,
   .service-card,
   .contact-card,
   .contact-form,
   .spotlight {
-    padding: 22px 20px;
+    padding: 18px 16px;
   }
 
   .hero-card {
-    padding: 18px 18px 16px;
-    gap: 10px;
-    width: auto;
-    max-width: 100%;
+    padding: 16px 15px 14px;
+    gap: 8px;
   }
 
   .hero-card ul {
-    margin: 8px 0 0;
-    padding-left: 18px;
-    line-height: 1.65;
-    font-size: 1rem;
-  }
-
-  .hero-note {
-    display: none;
+    margin: 6px 0 0;
+    padding-left: 16px;
+    line-height: 1.5;
+    font-size: 0.94rem;
   }
 
   .cards-grid,
   .confidence-strip,
   .values-list,
   .stats-band {
-    gap: 14px;
+    gap: 10px;
   }
 
   .service-card {
@@ -745,58 +739,57 @@ textarea {
   }
 
   .stat {
-    padding: 18px;
+    padding: 16px;
   }
 
   input,
   textarea {
-    padding: 14px 15px;
+    padding: 13px 14px;
   }
-
 }
 
 @media (max-width: 420px) {
   .page-shell {
-    width: min(100% - 14px, 1180px);
+    width: min(100% - 12px, 1180px);
   }
 
   .site-header {
-    padding: 16px 16px 14px;
+    padding: 12px;
   }
 
   .site-nav {
-    font-size: 0.88rem;
-    gap: 10px;
+    font-size: 0.82rem;
+    gap: 7px;
   }
 
   .hero-copy {
-    padding: 20px 16px 14px;
+    padding: 18px 14px 12px;
   }
 
   .brand-logo-main {
-    font-size: 1.24rem;
-    letter-spacing: 0.1em;
+    font-size: 1.04rem;
+    letter-spacing: 0.08em;
   }
 
   .brand-sub-text {
-    font-size: 0.62rem;
-    letter-spacing: 0.24em;
+    font-size: 0.54rem;
+    letter-spacing: 0.18em;
   }
 
   .brand-line {
-    width: 18px;
+    width: 12px;
   }
 
   .brand-bottom-line {
-    width: 14px;
+    width: 8px;
   }
 
   .hero-card {
-    padding: 16px 15px 14px;
+    padding: 14px 13px 12px;
   }
 
   .confidence-item {
-    padding: 16px 15px;
+    padding: 14px 13px;
   }
 
   .card-label {
@@ -813,15 +806,14 @@ textarea {
     background:
       linear-gradient(180deg, rgba(6, 14, 23, 0.16) 0%, rgba(6, 14, 23, 0.3) 42%, rgba(6, 14, 23, 0.64) 100%),
       linear-gradient(90deg, rgba(6, 14, 23, 0.1) 0%, rgba(6, 14, 23, 0.02) 50%, rgba(6, 14, 23, 0.12) 100%),
-      url("/place-francois-1er.jpg")
-        56% top / cover no-repeat;
+      url("/place-francois-1er.jpg") 56% top / cover no-repeat;
   }
 
   h1 {
-    font-size: clamp(2.5rem, 13vw, 3.4rem);
+    font-size: clamp(2rem, 12vw, 2.7rem);
   }
 
   h2 {
-    font-size: clamp(1.95rem, 10vw, 2.5rem);
+    font-size: clamp(1.65rem, 9vw, 2.1rem);
   }
 }
