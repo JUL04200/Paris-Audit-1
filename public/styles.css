@@ -475,49 +475,6 @@ button {
   gap: 14px;
 }
 
-.site-footer {
-  margin-top: 40px;
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: rgba(8, 18, 29, 0.78);
-  box-shadow: var(--shadow);
-}
-
-.footer-brand h2 {
-  max-width: 14ch;
-  margin-bottom: 14px;
-}
-
-.footer-brand p:last-child,
-.footer-card p {
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 22px;
-}
-
-.footer-card {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(18, 33, 49, 0.9);
-  border: 1px solid rgba(193, 211, 229, 0.1);
-}
-
-.footer-card strong {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.footer-card p {
-  margin: 0 0 6px;
-}
-
 .hero-copy,
 .hero-card,
 .intro-panel,
@@ -528,7 +485,6 @@ button {
 .contact-copy,
 .contact-card,
 .contact-form,
-.footer-card,
 .stat {
   min-width: 0;
 }
@@ -581,8 +537,7 @@ textarea {
   .spotlight,
   .contact-section,
   .cards-grid,
-  .stats-band,
-  .footer-grid {
+  .stats-band {
     grid-template-columns: 1fr;
   }
 
@@ -796,14 +751,6 @@ textarea {
     padding: 13px 14px;
   }
 
-  .site-footer {
-    padding: 20px 18px;
-    border-radius: 18px;
-  }
-
-  .footer-grid {
-    gap: 12px;
-  }
 }
 
 @media (max-width: 420px) {
@@ -846,8 +793,7 @@ textarea {
     padding: 12px 14px;
   }
 
-  .confidence-item,
-  .footer-card {
+  .confidence-item {
     padding: 14px;
   }
 
