@@ -43,8 +43,7 @@ body {
   background: rgba(7, 16, 26, 0.72);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow);
-  position: sticky;
-  top: 18px;
+  position: static;
   z-index: 10;
 }
 
@@ -514,8 +513,6 @@ textarea {
   }
 
   .site-header {
-    position: sticky;
-    top: 10px;
     padding: 18px;
   }
 
@@ -572,7 +569,6 @@ textarea {
     gap: 14px;
     padding: 16px 16px 14px;
     border-radius: 18px;
-    top: 8px;
   }
 
   .brand {
@@ -602,22 +598,27 @@ textarea {
   }
 
   .site-nav {
-    gap: 8px;
+    gap: 12px;
     font-size: 0.92rem;
-    flex-wrap: wrap;
-    overflow-x: visible;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     justify-content: flex-start;
     padding-bottom: 0;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .site-nav a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: calc(50% - 4px);
-    min-height: 40px;
-    text-align: center;
-    white-space: normal;
+    width: auto;
+    min-height: 0;
+    text-align: left;
+    white-space: nowrap;
     padding: 7px 10px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.04);
@@ -732,13 +733,7 @@ textarea {
 
   .site-nav {
     font-size: 0.86rem;
-    gap: 7px;
-  }
-
-  .site-nav a {
-    width: calc(50% - 3.5px);
-    min-height: 38px;
-    padding: 7px 8px;
+    gap: 10px;
   }
 
   .hero-copy {
