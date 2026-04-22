@@ -611,6 +611,12 @@ textarea {
   }
 
   .site-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(50% - 4px);
+    min-height: 40px;
+    text-align: center;
     white-space: normal;
     padding: 7px 10px;
     border-radius: 999px;
@@ -727,6 +733,12 @@ textarea {
   .site-nav {
     font-size: 0.86rem;
     gap: 7px;
+  }
+
+  .site-nav a {
+    width: calc(50% - 3.5px);
+    min-height: 38px;
+    padding: 7px 8px;
   }
 
   .hero-copy {
