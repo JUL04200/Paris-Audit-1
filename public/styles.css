@@ -178,7 +178,7 @@ body {
   background:
     linear-gradient(90deg, rgba(6, 14, 23, 0.9) 0%, rgba(6, 14, 23, 0.7) 34%, rgba(6, 14, 23, 0.46) 58%, rgba(6, 14, 23, 0.8) 100%),
     linear-gradient(180deg, rgba(4, 10, 18, 0.24), rgba(4, 10, 18, 0.62)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg")
+    url("/place-francois-1er.jpg")
       center center / cover no-repeat;
   box-shadow: var(--shadow);
   z-index: -2;
@@ -555,7 +555,7 @@ textarea {
     background:
       linear-gradient(180deg, rgba(6, 14, 23, 0.2) 0%, rgba(6, 14, 23, 0.34) 42%, rgba(6, 14, 23, 0.68) 100%),
       linear-gradient(90deg, rgba(6, 14, 23, 0.16) 0%, rgba(6, 14, 23, 0.04) 52%, rgba(6, 14, 23, 0.18) 100%),
-      url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg")
+      url("/place-francois-1er.jpg")
         54% top / cover no-repeat;
   }
 
@@ -776,7 +776,7 @@ textarea {
     background:
       linear-gradient(180deg, rgba(6, 14, 23, 0.16) 0%, rgba(6, 14, 23, 0.3) 42%, rgba(6, 14, 23, 0.64) 100%),
       linear-gradient(90deg, rgba(6, 14, 23, 0.1) 0%, rgba(6, 14, 23, 0.02) 50%, rgba(6, 14, 23, 0.12) 100%),
-      url("https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Fran%C3%A7ois-Ier,%20Paris%208e.jpg")
+      url("/place-francois-1er.jpg")
         56% top / cover no-repeat;
   }
 
