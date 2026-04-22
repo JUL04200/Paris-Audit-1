@@ -51,22 +51,63 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
   text-decoration: none;
   color: inherit;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #102032, #1b3149);
-  color: var(--white);
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.brand-logo-main {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.25rem;
-  letter-spacing: 0.06em;
+  font-size: 2.15rem;
+  line-height: 0.9;
+  letter-spacing: 0.18em;
+  color: #eef3fa;
+}
+
+.brand-logo-sub {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-sub-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: #d2ae72;
+  white-space: nowrap;
+}
+
+.brand-line {
+  width: 52px;
+  height: 1px;
+  background: rgba(210, 174, 114, 0.9);
+}
+
+.brand-logo-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1px;
+}
+
+.brand-bottom-line {
+  width: 42px;
+  height: 1px;
+  background: rgba(210, 174, 114, 0.72);
+}
+
+.brand-diamond {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(210, 174, 114, 0.9);
+  transform: rotate(45deg);
 }
 
 .brand-text {
@@ -77,6 +118,18 @@ body {
 
 .brand-text strong {
   font-size: 1rem;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #102032, #1b3149);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
 }
 
 .brand-text small,
@@ -524,21 +577,28 @@ textarea {
 
   .brand {
     align-items: flex-start;
-    gap: 10px;
   }
 
-  .brand-mark {
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
+  .brand-logo {
+    gap: 4px;
   }
 
-  .brand-text strong {
-    font-size: 0.94rem;
+  .brand-logo-main {
+    font-size: 1.4rem;
+    letter-spacing: 0.14em;
   }
 
-  .brand-text small {
-    display: none;
+  .brand-sub-text {
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+  }
+
+  .brand-line {
+    width: 28px;
+  }
+
+  .brand-bottom-line {
+    width: 22px;
   }
 
   .site-nav {
@@ -671,6 +731,24 @@ textarea {
 
   .hero-copy {
     padding: 16px 14px 6px;
+  }
+
+  .brand-logo-main {
+    font-size: 1.16rem;
+    letter-spacing: 0.12em;
+  }
+
+  .brand-sub-text {
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+  }
+
+  .brand-line {
+    width: 18px;
+  }
+
+  .brand-bottom-line {
+    width: 14px;
   }
 
   .hero-card {
