@@ -565,13 +565,13 @@ textarea {
 
 @media (max-width: 640px) {
   .page-shell {
-    width: min(100% - 18px, 1180px);
-    margin: 12px auto 28px;
+    width: min(100% - 20px, 1180px);
+    margin: 16px auto 36px;
   }
 
   .hero {
-    padding: 14px 0 8px;
-    gap: 14px;
+    padding: 18px 0 12px;
+    gap: 18px;
     min-height: auto;
   }
 
@@ -589,15 +589,15 @@ textarea {
   }
 
   .hero-copy {
-    padding: 18px 16px 8px;
-    border-radius: 18px;
-    background: linear-gradient(180deg, rgba(8, 17, 27, 0.12), rgba(8, 17, 27, 0.03));
+    padding: 24px 20px 18px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(8, 17, 27, 0.18), rgba(8, 17, 27, 0.05));
   }
 
   .site-header {
-    gap: 14px;
-    padding: 16px 16px 14px;
-    border-radius: 18px;
+    gap: 16px;
+    padding: 18px 18px 16px;
+    border-radius: 22px;
   }
 
   .brand {
@@ -605,17 +605,17 @@ textarea {
   }
 
   .brand-logo {
-    gap: 4px;
+    gap: 6px;
   }
 
   .brand-logo-main {
-    font-size: 1.4rem;
-    letter-spacing: 0.14em;
+    font-size: 1.54rem;
+    letter-spacing: 0.12em;
   }
 
   .brand-sub-text {
-    font-size: 0.68rem;
-    letter-spacing: 0.35em;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
   }
 
   .brand-line {
@@ -627,12 +627,12 @@ textarea {
   }
 
   .site-nav {
-    gap: 12px;
-    font-size: 0.92rem;
+    gap: 10px;
+    font-size: 0.95rem;
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
-    padding-bottom: 0;
+    padding-bottom: 2px;
     scrollbar-width: none;
   }
 
@@ -648,19 +648,20 @@ textarea {
     min-height: 0;
     text-align: left;
     white-space: nowrap;
-    padding: 7px 10px;
+    padding: 9px 12px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.06);
   }
 
   h1 {
-    font-size: clamp(2.5rem, 14vw, 4rem);
-    line-height: 0.94;
+    font-size: clamp(2.85rem, 14vw, 4.2rem);
+    line-height: 0.92;
+    max-width: 9.5ch;
   }
 
   h2 {
-    font-size: clamp(2rem, 11vw, 2.8rem);
-    line-height: 0.98;
+    font-size: clamp(2.15rem, 11vw, 3rem);
+    line-height: 0.96;
     max-width: 100%;
   }
 
@@ -680,19 +681,20 @@ textarea {
   input,
   textarea,
   button {
-    font-size: 0.98rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 12px;
+    margin-top: 28px;
   }
 
   .button {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 18px;
   }
 
   .hero-card,
@@ -710,21 +712,21 @@ textarea {
   .contact-card,
   .contact-form,
   .spotlight {
-    padding: 18px;
+    padding: 22px 20px;
   }
 
   .hero-card {
-    padding: 14px 16px;
-    gap: 6px;
+    padding: 18px 18px 16px;
+    gap: 10px;
     width: auto;
     max-width: 100%;
   }
 
   .hero-card ul {
-    margin: 6px 0 0;
-    padding-left: 16px;
-    line-height: 1.5;
-    font-size: 0.95rem;
+    margin: 8px 0 0;
+    padding-left: 18px;
+    line-height: 1.65;
+    font-size: 1rem;
   }
 
   .hero-note {
@@ -735,7 +737,7 @@ textarea {
   .confidence-strip,
   .values-list,
   .stats-band {
-    gap: 12px;
+    gap: 14px;
   }
 
   .service-card {
@@ -743,42 +745,42 @@ textarea {
   }
 
   .stat {
-    padding: 16px;
+    padding: 18px;
   }
 
   input,
   textarea {
-    padding: 13px 14px;
+    padding: 14px 15px;
   }
 
 }
 
 @media (max-width: 420px) {
   .page-shell {
-    width: min(100% - 12px, 1180px);
+    width: min(100% - 14px, 1180px);
   }
 
   .site-header {
-    padding: 14px 14px 12px;
+    padding: 16px 16px 14px;
   }
 
   .site-nav {
-    font-size: 0.86rem;
+    font-size: 0.88rem;
     gap: 10px;
   }
 
   .hero-copy {
-    padding: 16px 14px 6px;
+    padding: 20px 16px 14px;
   }
 
   .brand-logo-main {
-    font-size: 1.16rem;
-    letter-spacing: 0.12em;
+    font-size: 1.24rem;
+    letter-spacing: 0.1em;
   }
 
   .brand-sub-text {
-    font-size: 0.6rem;
-    letter-spacing: 0.28em;
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
   }
 
   .brand-line {
@@ -790,11 +792,11 @@ textarea {
   }
 
   .hero-card {
-    padding: 12px 14px;
+    padding: 16px 15px 14px;
   }
 
   .confidence-item {
-    padding: 14px;
+    padding: 16px 15px;
   }
 
   .card-label {
@@ -816,10 +818,10 @@ textarea {
   }
 
   h1 {
-    font-size: clamp(2.2rem, 13vw, 3.2rem);
+    font-size: clamp(2.5rem, 13vw, 3.4rem);
   }
 
   h2 {
-    font-size: clamp(1.8rem, 10vw, 2.4rem);
+    font-size: clamp(1.95rem, 10vw, 2.5rem);
   }
 }
