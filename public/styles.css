@@ -55,11 +55,46 @@ body {
   flex: 0 1 auto;
 }
 
-.brand-image {
-  display: block;
-  width: 100%;
-  max-width: 360px;
-  height: auto;
+.brand-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.brand-name {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: #f4f7fb;
+}
+
+.brand-subline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.brand-subtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.8rem, 1.05vw, 1.04rem);
+  font-weight: 700;
+  letter-spacing: 0.52em;
+  color: #edf3fa;
+  padding-left: 0.52em;
+}
+
+.brand-line {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 3px;
+  border-radius: 999px;
+  background: #edf3fa;
 }
 
 .brand-text small,
@@ -109,7 +144,7 @@ body {
   background:
     linear-gradient(90deg, rgba(6, 14, 23, 0.9) 0%, rgba(6, 14, 23, 0.7) 34%, rgba(6, 14, 23, 0.46) 58%, rgba(6, 14, 23, 0.8) 100%),
     linear-gradient(180deg, rgba(4, 10, 18, 0.24), rgba(4, 10, 18, 0.62)),
-    url("/place-francois-1er.jpg") center center / cover no-repeat;
+    url("./place-francois-1er.jpg") center center / cover no-repeat;
   box-shadow: var(--shadow);
   z-index: -2;
 }
@@ -513,12 +548,19 @@ textarea {
     align-items: center;
   }
 
-  .brand-image {
-    max-width: 220px;
+  .brand-name {
+    font-size: 2.2rem;
   }
 
-  .brand-image {
-    max-width: 280px;
+  .brand-subtitle {
+    font-size: 0.86rem;
+    letter-spacing: 0.42em;
+    padding-left: 0.42em;
+  }
+
+  .brand-line {
+    flex-basis: 36px;
+    width: 36px;
   }
 
   .site-nav {
@@ -556,7 +598,7 @@ textarea {
     background:
       linear-gradient(180deg, rgba(6, 14, 23, 0.22) 0%, rgba(6, 14, 23, 0.38) 42%, rgba(6, 14, 23, 0.7) 100%),
       linear-gradient(90deg, rgba(6, 14, 23, 0.18) 0%, rgba(6, 14, 23, 0.05) 52%, rgba(6, 14, 23, 0.18) 100%),
-      url("/place-francois-1er.jpg") 54% top / cover no-repeat;
+      url("./place-francois-1er.jpg") 54% top / cover no-repeat;
   }
 
   .hero-copy {
@@ -682,12 +724,24 @@ textarea {
     padding: 16px 12px 10px;
   }
 
-  .brand-image {
-    max-width: 190px;
+  .brand-name {
+    font-size: 1.78rem;
   }
 
-  .brand-image {
-    max-width: 220px;
+  .brand-subline {
+    gap: 10px;
+  }
+
+  .brand-subtitle {
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    padding-left: 0.34em;
+  }
+
+  .brand-line {
+    flex-basis: 26px;
+    width: 26px;
+    height: 2px;
   }
 
   .hero-card {
@@ -712,7 +766,7 @@ textarea {
     background:
       linear-gradient(180deg, rgba(6, 14, 23, 0.16) 0%, rgba(6, 14, 23, 0.3) 42%, rgba(6, 14, 23, 0.64) 100%),
       linear-gradient(90deg, rgba(6, 14, 23, 0.1) 0%, rgba(6, 14, 23, 0.02) 50%, rgba(6, 14, 23, 0.12) 100%),
-      url("/place-francois-1er.jpg") 56% top / cover no-repeat;
+      url("./place-francois-1er.jpg") 56% top / cover no-repeat;
   }
 
   h1 {

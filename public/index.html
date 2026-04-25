@@ -42,14 +42,21 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" as="image" href="/place-francois-1er.jpg" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preload" as="image" href="./place-francois-1er.jpg" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="#top">
-          <img class="brand-image" src="/logo-paris-audit-cutout.png" alt="Paris Audit et Conseil" />
+          <span class="brand-lockup" aria-label="Paris Audit et Conseil">
+            <span class="brand-name">Paris Audit</span>
+            <span class="brand-subline">
+              <span class="brand-line" aria-hidden="true"></span>
+              <span class="brand-subtitle">Et Conseil</span>
+              <span class="brand-line" aria-hidden="true"></span>
+            </span>
+          </span>
         </a>
 
         <nav class="site-nav" aria-label="Navigation principale">
@@ -271,6 +278,6 @@
       </main>
     </div>
 
-    <script src="/app.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
