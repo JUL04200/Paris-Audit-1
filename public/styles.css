@@ -52,83 +52,14 @@ body {
   align-items: center;
   text-decoration: none;
   color: inherit;
+  flex: 0 1 auto;
 }
 
-.brand-logo {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.brand-logo-main {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.15rem;
-  line-height: 0.9;
-  letter-spacing: 0.18em;
-  color: #eef3fa;
-}
-
-.brand-logo-sub {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand-sub-text {
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.5em;
-  color: #d2ae72;
-  white-space: nowrap;
-}
-
-.brand-line {
-  width: 52px;
-  height: 1px;
-  background: rgba(210, 174, 114, 0.9);
-}
-
-.brand-logo-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 1px;
-}
-
-.brand-bottom-line {
-  width: 42px;
-  height: 1px;
-  background: rgba(210, 174, 114, 0.72);
-}
-
-.brand-diamond {
-  width: 8px;
-  height: 8px;
-  border: 1px solid rgba(210, 174, 114, 0.9);
-  transform: rotate(45deg);
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.brand-text strong {
-  font-size: 1rem;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #102032, #1b3149);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.25rem;
-  letter-spacing: 0.06em;
+.brand-image {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
 }
 
 .brand-text small,
@@ -582,28 +513,12 @@ textarea {
     align-items: center;
   }
 
-  .brand-logo {
-    gap: 4px;
-    align-items: center;
+  .brand-image {
+    max-width: 220px;
   }
 
-  .brand-logo-main {
-    font-size: 0.98rem;
-    letter-spacing: 0.08em;
-    text-align: center;
-  }
-
-  .brand-sub-text {
-    font-size: 0.5rem;
-    letter-spacing: 0.16em;
-  }
-
-  .brand-line {
-    width: 10px;
-  }
-
-  .brand-bottom-line {
-    width: 8px;
+  .brand-image {
+    max-width: 280px;
   }
 
   .site-nav {
@@ -767,22 +682,12 @@ textarea {
     padding: 16px 12px 10px;
   }
 
-  .brand-logo-main {
-    font-size: 0.92rem;
-    letter-spacing: 0.06em;
+  .brand-image {
+    max-width: 190px;
   }
 
-  .brand-sub-text {
-    font-size: 0.48rem;
-    letter-spacing: 0.14em;
-  }
-
-  .brand-line {
-    width: 12px;
-  }
-
-  .brand-bottom-line {
-    width: 8px;
+  .brand-image {
+    max-width: 220px;
   }
 
   .hero-card {
