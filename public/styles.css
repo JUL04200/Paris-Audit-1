@@ -295,6 +295,10 @@ button {
   color: var(--white);
 }
 
+.intro-link-row {
+  margin-top: 26px;
+}
+
 .card-label {
   margin: 0;
   color: var(--accent-dark);
@@ -495,8 +499,109 @@ textarea {
   color: #a12e2e;
 }
 
+.profile-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.82fr;
+  gap: 28px;
+  padding: 42px 4px 18px;
+  align-items: start;
+}
+
+.profile-copy,
+.profile-card,
+.timeline-item,
+.source-note {
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.profile-copy {
+  padding: 28px 26px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(8, 17, 27, 0.74), rgba(11, 24, 38, 0.88));
+}
+
+.profile-role {
+  margin: 18px 0 0;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #dce6f1;
+  font-weight: 600;
+}
+
+.profile-card {
+  padding: 24px;
+  border-radius: 22px;
+  background: rgba(8, 18, 29, 0.84);
+}
+
+.profile-photo {
+  width: 148px;
+  height: 148px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(210, 174, 114, 0.28);
+  box-shadow: 0 18px 40px rgba(2, 8, 16, 0.32);
+}
+
+.profile-card ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+.timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-item {
+  padding: 22px 24px;
+  border-radius: 20px;
+  background: rgba(11, 24, 37, 0.82);
+}
+
+.timeline-period {
+  display: inline-block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+}
+
+.timeline-item h3 {
+  margin-bottom: 8px;
+}
+
+.timeline-item p,
+.source-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.profile-spotlight {
+  margin-top: 8px;
+}
+
+.source-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 24px;
+  border-radius: 20px;
+  background: rgba(9, 20, 31, 0.84);
+}
+
 @media (max-width: 980px) {
   .hero,
+  .profile-hero,
   .intro-grid,
   .confidence-strip,
   .spotlight,
@@ -512,6 +617,11 @@ textarea {
 
   .site-nav {
     justify-content: flex-start;
+  }
+
+  .source-note {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   h1 {
@@ -589,6 +699,11 @@ textarea {
     min-height: auto;
   }
 
+  .profile-hero {
+    padding: 10px 0 4px;
+    gap: 12px;
+  }
+
   .hero::before,
   .hero::after {
     border-radius: 16px;
@@ -659,7 +774,11 @@ textarea {
   .spotlight,
   .contact-card,
   .contact-form,
-  .stats-band {
+  .stats-band,
+  .profile-copy,
+  .profile-card,
+  .timeline-item,
+  .source-note {
     border-radius: 14px;
   }
 
@@ -669,8 +788,18 @@ textarea {
   .service-card,
   .contact-card,
   .contact-form,
-  .spotlight {
+  .spotlight,
+  .profile-copy,
+  .profile-card,
+  .timeline-item,
+  .source-note {
     padding: 14px 12px;
+  }
+
+  .profile-photo {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 16px;
   }
 
   .hero-card {
@@ -722,6 +851,13 @@ textarea {
 
   .hero-copy {
     padding: 16px 12px 10px;
+  }
+
+  .profile-copy,
+  .profile-card,
+  .timeline-item,
+  .source-note {
+    padding: 12px;
   }
 
   .brand-name {
