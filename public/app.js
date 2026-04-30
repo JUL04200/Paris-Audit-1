@@ -30,7 +30,7 @@ form.addEventListener("submit", async (event) => {
     }
 
     setStatus(
-      "Demande preparee. Votre messagerie va s'ouvrir pour finaliser l'email.",
+      "Demande préparée. Votre messagerie va s'ouvrir pour finaliser l'email.",
       "success"
     );
     form.reset();

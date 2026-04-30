@@ -1,7 +1,7 @@
 module.exports = (request, response) => {
   if (request.method !== "POST") {
     response.status(405).json({
-      error: "Methode non autorisee."
+      error: "Méthode non autorisée."
     });
     return;
   }
@@ -23,7 +23,7 @@ module.exports = (request, response) => {
   const recipientEmail = process.env.CONTACT_TO_EMAIL || "INFO@PARISAUDIT.COM";
 
   response.status(200).json({
-    message: "Votre demande a bien ete preparee.",
+    message: "Votre demande a bien été préparée.",
     mailtoLink: buildMailtoLink({
       email: recipientEmail,
       name,
@@ -48,8 +48,8 @@ function buildMailtoLink({ email, name, company, phone, message }) {
   const body = encodeURIComponent(
     [
       `Nom : ${name}`,
-      `Entreprise : ${company || "Non renseignee"}`,
-      `Telephone : ${phone || "Non renseigne"}`,
+      `Entreprise : ${company || "Non renseignée"}`,
+      `Téléphone : ${phone || "Non renseigné"}`,
       "",
       "Message :",
       message
