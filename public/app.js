@@ -284,6 +284,18 @@ document.querySelectorAll('a, button').forEach(el => {
   });
 })();
 
+/* ── MENU BURGER MOBILE ── */
+const burger = document.getElementById('nav-burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger?.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  burger.classList.toggle('open', open);
+});
+function closeMobileMenu() {
+  mobileMenu?.classList.remove('open');
+  burger?.classList.remove('open');
+}
+
 /* ── SCROLL REVEAL ── */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
