@@ -18,173 +18,230 @@ document.querySelectorAll('a, button').forEach(el => {
   el.addEventListener('mouseleave', () => cursor?.classList.remove('big'));
 });
 
-/* ── THREE.JS HERO 3D ── */
+/* ── THREE.JS — GRAPHIQUE FINANCIER 3D INTERACTIF ── */
 (function () {
   if (typeof THREE === 'undefined') return;
-
   const canvas = document.getElementById('three-canvas');
   if (!canvas) return;
 
-  const W = window.innerWidth, H = window.innerHeight;
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(W, H);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x000000, 0); /* transparent — fond rue visible */
   renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  renderer.setClearColor(0x000000, 1);
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
-  camera.position.set(0, 0, 7);
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+  camera.position.set(0, 1, 10);
 
-  /* Lights */
-  const ambient = new THREE.AmbientLight(0xffffff, 0.15);
-  scene.add(ambient);
+  /* ── LUMIÈRES ── */
+  scene.add(new THREE.AmbientLight(0xffffff, 0.3));
 
-  const keyLight = new THREE.PointLight(0xf0d090, 8, 20);
-  keyLight.position.set(4, 5, 4);
+  const keyLight = new THREE.PointLight(0xf0d090, 6, 25);
+  keyLight.position.set(5, 8, 6);
   keyLight.castShadow = true;
   scene.add(keyLight);
 
-  const fillLight = new THREE.PointLight(0xc9a96e, 4, 20);
-  fillLight.position.set(-5, -2, 3);
+  const fillLight = new THREE.PointLight(0xc9a96e, 3, 20);
+  fillLight.position.set(-6, -2, 4);
   scene.add(fillLight);
 
-  const rimLight = new THREE.PointLight(0xffffff, 3, 15);
-  rimLight.position.set(0, -6, -4);
+  const rimLight = new THREE.DirectionalLight(0xffd080, 1.5);
+  rimLight.position.set(0, 10, -5);
   scene.add(rimLight);
 
-  const accentLight = new THREE.PointLight(0xd4a853, 5, 12);
-  accentLight.position.set(0, 8, 0);
-  scene.add(accentLight);
-
-  /* Main Object — Icosahedron (crystal gem) */
-  const mainGeo = new THREE.IcosahedronGeometry(2.2, 1);
-  const mainMat = new THREE.MeshPhongMaterial({
-    color: 0x0a0800,
-    emissive: 0x180e00,
+  /* ── MATÉRIAUX ── */
+  const goldMat = new THREE.MeshPhongMaterial({
+    color: 0x1a1200,
+    emissive: 0x0d0800,
     specular: 0xf0d090,
-    shininess: 180,
-    flatShading: true,
+    shininess: 200,
+    flatShading: false,
   });
-  const mainMesh = new THREE.Mesh(mainGeo, mainMat);
-  mainMesh.castShadow = true;
-  scene.add(mainMesh);
-
-  /* Wireframe overlay */
-  const wireGeo = new THREE.IcosahedronGeometry(2.22, 1);
+  const goldEdgeMat = new THREE.LineBasicMaterial({
+    color: 0xc9a96e,
+    transparent: true,
+    opacity: 0.35,
+  });
   const wireMat = new THREE.MeshBasicMaterial({
     color: 0xc9a96e,
     wireframe: true,
     transparent: true,
-    opacity: 0.12,
+    opacity: 0.07,
   });
-  const wireMesh = new THREE.Mesh(wireGeo, wireMat);
-  scene.add(wireMesh);
 
-  /* Inner glowing core */
-  const coreGeo = new THREE.IcosahedronGeometry(1.0, 0);
-  const coreMat = new THREE.MeshBasicMaterial({
-    color: 0xc9a96e,
-    transparent: true,
-    opacity: 0.04,
+  /* ── DONNÉES FINANCIÈRES (hauteurs relatives) ── */
+  const data = [0.4, 0.65, 0.5, 0.85, 0.7, 1.0, 0.78, 0.92];
+  const barGroup = new THREE.Group();
+  const barMeshes = [];
+  const targetHeights = [];
+  const currentHeights = [];
+  const baseHeights = data.map(v => v * 3.8);
+
+  const barW = 0.32, barD = 0.32, gap = 0.52;
+  const totalW = data.length * (barW + gap) - gap;
+  const startX = -totalW / 2 + barW / 2;
+
+  data.forEach((val, i) => {
+    const h = baseHeights[i];
+    const x = startX + i * (barW + gap);
+
+    /* Barre principale */
+    const geo = new THREE.BoxGeometry(barW, h, barD);
+    const mesh = new THREE.Mesh(geo, goldMat.clone());
+    mesh.position.set(x, h / 2 - 2.2, 0);
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    barGroup.add(mesh);
+    barMeshes.push(mesh);
+    targetHeights.push(h);
+    currentHeights.push(h);
+
+    /* Contour doré */
+    const edges = new THREE.EdgesGeometry(geo);
+    const line = new THREE.LineSegments(edges, goldEdgeMat.clone());
+    line.position.copy(mesh.position);
+    barGroup.add(line);
+
+    /* Top cap lumineux */
+    const capGeo = new THREE.BoxGeometry(barW + 0.04, 0.04, barD + 0.04);
+    const capMat = new THREE.MeshBasicMaterial({ color: 0xf0d090, transparent: true, opacity: 0.9 });
+    const cap = new THREE.Mesh(capGeo, capMat);
+    cap.position.set(x, h - 2.2, 0);
+    barGroup.add(cap);
+    mesh.userData.cap = cap;
   });
-  const coreMesh = new THREE.Mesh(coreGeo, coreMat);
-  scene.add(coreMesh);
 
-  /* Outer ring */
-  const ringGeo = new THREE.TorusGeometry(3.2, 0.008, 3, 120);
-  const ringMat = new THREE.MeshBasicMaterial({ color: 0xc9a96e, transparent: true, opacity: 0.18 });
-  const ring = new THREE.Mesh(ringGeo, ringMat);
-  ring.rotation.x = Math.PI / 2.4;
-  scene.add(ring);
+  /* Sol / grille */
+  const gridHelper = new THREE.GridHelper(12, 12, 0xc9a96e, 0xc9a96e);
+  gridHelper.material.transparent = true;
+  gridHelper.material.opacity = 0.06;
+  gridHelper.position.y = -2.2;
+  barGroup.add(gridHelper);
 
-  const ring2Geo = new THREE.TorusGeometry(3.6, 0.005, 3, 140);
-  const ring2Mat = new THREE.MeshBasicMaterial({ color: 0xc9a96e, transparent: true, opacity: 0.08 });
-  const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
-  ring2.rotation.x = Math.PI / 3;
-  ring2.rotation.z = 0.4;
-  scene.add(ring2);
+  /* Ligne de base */
+  const baseLineMat = new THREE.LineBasicMaterial({ color: 0xc9a96e, transparent: true, opacity: 0.3 });
+  const baseLineGeo = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(-totalW / 2 - 0.3, -2.2, 0),
+    new THREE.Vector3(totalW / 2 + 0.3, -2.2, 0),
+  ]);
+  barGroup.add(new THREE.Line(baseLineGeo, baseLineMat));
 
-  /* Floating particles around the object */
-  const partCount = 200;
-  const partPositions = new Float32Array(partCount * 3);
-  for (let i = 0; i < partCount; i++) {
-    const theta = Math.random() * Math.PI * 2;
-    const phi = Math.acos(2 * Math.random() - 1);
-    const r = 3 + Math.random() * 2.5;
-    partPositions[i * 3]     = r * Math.sin(phi) * Math.cos(theta);
-    partPositions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-    partPositions[i * 3 + 2] = r * Math.cos(phi);
+  /* Ligne de tendance (courbe) */
+  const trendPoints = data.map((v, i) => new THREE.Vector3(
+    startX + i * (barW + gap), v * 3.8 - 2.2, 0.3
+  ));
+  const trendCurve = new THREE.CatmullRomCurve3(trendPoints);
+  const trendGeo = new THREE.BufferGeometry().setFromPoints(trendCurve.getPoints(60));
+  const trendMat = new THREE.LineBasicMaterial({ color: 0xf0d090, transparent: true, opacity: 0.55 });
+  barGroup.add(new THREE.Line(trendGeo, trendMat));
+
+  /* Points sur la courbe */
+  const dotMat = new THREE.MeshBasicMaterial({ color: 0xf0d090 });
+  trendPoints.forEach(pt => {
+    const dot = new THREE.Mesh(new THREE.SphereGeometry(0.055, 8, 8), dotMat);
+    dot.position.copy(pt);
+    barGroup.add(dot);
+  });
+
+  /* Particules flottantes */
+  const pCount = 120;
+  const pPos = new Float32Array(pCount * 3);
+  for (let i = 0; i < pCount; i++) {
+    pPos[i * 3]     = (Math.random() - 0.5) * 14;
+    pPos[i * 3 + 1] = (Math.random() - 0.5) * 8;
+    pPos[i * 3 + 2] = (Math.random() - 0.5) * 6 - 1;
   }
-  const partGeo = new THREE.BufferGeometry();
-  partGeo.setAttribute('position', new THREE.BufferAttribute(partPositions, 3));
-  const partMat = new THREE.PointsMaterial({ color: 0xc9a96e, size: 0.025, transparent: true, opacity: 0.6 });
-  const particles = new THREE.Points(partGeo, partMat);
-  scene.add(particles);
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+  const pMat = new THREE.PointsMaterial({ color: 0xc9a96e, size: 0.03, transparent: true, opacity: 0.5 });
+  barGroup.add(new THREE.Points(pGeo, pMat));
 
-  /* Mouse influence */
-  let targetRotX = 0, targetRotY = 0;
-  let currentRotX = 0, currentRotY = 0;
+  /* Position groupe — décalé vers la droite pour laisser place au texte */
+  barGroup.position.set(1.8, 0, 0);
+  scene.add(barGroup);
+
+  /* ── INTERACTION SOURIS ── */
+  let mouseInflX = 0, mouseInflY = 0;
+  let targetInflX = 0, targetInflY = 0;
+
+  /* Raycaster pour hover interactif sur les barres */
+  const raycaster = new THREE.Raycaster();
+  const mouse2D = new THREE.Vector2();
+  const hoveredBars = new Set();
+
   document.addEventListener('mousemove', e => {
-    targetRotY = ((e.clientX / window.innerWidth) - 0.5) * 1.2;
-    targetRotX = ((e.clientY / window.innerHeight) - 0.5) * 0.8;
+    targetInflX = (e.clientX / window.innerWidth - 0.5) * 2.0;
+    targetInflY = (e.clientY / window.innerHeight - 0.5) * 1.2;
+    mouse2D.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse2D.y = -(e.clientY / window.innerHeight) * 2 + 1;
   });
 
-  /* Animation */
+  /* ── ANIMATION ── */
   let t = 0;
   function animate() {
     requestAnimationFrame(animate);
-    t += 0.006;
+    t += 0.008;
 
-    /* Smooth mouse follow */
-    currentRotX += (targetRotX - currentRotX) * 0.04;
-    currentRotY += (targetRotY - currentRotY) * 0.04;
+    /* Smooth mouse parallax */
+    mouseInflX += (targetInflX - mouseInflX) * 0.05;
+    mouseInflY += (targetInflY - mouseInflY) * 0.05;
 
-    /* Auto-rotate + mouse */
-    mainMesh.rotation.y = t * 0.3 + currentRotY;
-    mainMesh.rotation.x = t * 0.15 + currentRotX;
-    wireMesh.rotation.y = t * 0.3 + currentRotY;
-    wireMesh.rotation.x = t * 0.15 + currentRotX;
-    coreMesh.rotation.y = -t * 0.4;
+    barGroup.rotation.y = mouseInflX * 0.28;
+    barGroup.rotation.x = mouseInflY * 0.12;
 
-    /* Pulsing core */
-    const pulse = 1 + Math.sin(t * 2) * 0.06;
-    coreMesh.scale.setScalar(pulse);
-    coreMat.opacity = 0.03 + Math.sin(t * 2) * 0.02;
+    /* Légère rotation automatique quand souris immobile */
+    barGroup.rotation.y += Math.sin(t * 0.3) * 0.002;
 
-    /* Rings */
-    ring.rotation.z = t * 0.12;
-    ring2.rotation.z = -t * 0.08;
+    /* Raycaster hover — barres qui montent */
+    raycaster.setFromCamera(mouse2D, camera);
+    const intersects = raycaster.intersectObjects(barMeshes);
+    const hitSet = new Set(intersects.map(i => i.object));
 
-    /* Particles orbit */
-    particles.rotation.y = t * 0.08;
-    particles.rotation.x = t * 0.04;
+    barMeshes.forEach((bar, i) => {
+      const isHit = hitSet.has(bar);
+      targetHeights[i] = isHit ? baseHeights[i] * 1.22 : baseHeights[i];
 
-    /* Light animation */
-    keyLight.position.x = Math.sin(t * 0.5) * 5;
-    keyLight.position.z = Math.cos(t * 0.5) * 5;
-    fillLight.position.x = Math.cos(t * 0.4) * -5;
+      /* Smooth height interpolation */
+      currentHeights[i] += (targetHeights[i] - currentHeights[i]) * 0.1;
+      const h = currentHeights[i];
+
+      /* Rescale bar */
+      bar.scale.y = h / baseHeights[i];
+      bar.position.y = h / 2 - 2.2;
+
+      /* Cap position */
+      if (bar.userData.cap) bar.userData.cap.position.y = h - 2.2;
+
+      /* Glow on hover */
+      if (isHit) {
+        bar.material.emissive.setHex(0x3a2800);
+        bar.material.specular.setHex(0xffeebb);
+      } else {
+        bar.material.emissive.setHex(0x0d0800);
+        bar.material.specular.setHex(0xf0d090);
+      }
+    });
+
+    /* Lumière animée */
+    keyLight.position.x = 5 + Math.sin(t * 0.4) * 2;
+    keyLight.position.z = 6 + Math.cos(t * 0.3) * 2;
 
     renderer.render(scene, camera);
   }
   animate();
 
   window.addEventListener('resize', () => {
-    const W = window.innerWidth, H = window.innerHeight;
-    camera.aspect = W / H;
+    camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(W, H);
+    renderer.setSize(window.innerWidth, window.innerHeight);
   });
 })();
 
 /* ── SCROLL REVEAL ── */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObs.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
@@ -192,19 +249,16 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 /* ── CONTACT FORM ── */
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
-
 if (form) {
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('.btn-submit');
-    btn.textContent = 'Envoi…';
-    btn.disabled = true;
-    const payload = Object.fromEntries(new FormData(form).entries());
+    btn.textContent = 'Envoi…'; btn.disabled = true;
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error);
@@ -214,8 +268,7 @@ if (form) {
     } catch {
       statusEl.textContent = 'Erreur. Contactez-nous à INFO@PARISAUDIT.COM';
     } finally {
-      btn.textContent = 'Envoyer la demande';
-      btn.disabled = false;
+      btn.textContent = 'Envoyer la demande'; btn.disabled = false;
     }
   });
 }
