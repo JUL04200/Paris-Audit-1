@@ -581,14 +581,13 @@ body {
   .nav { padding: 20px 24px; }
   .nav-links { display: none; }
 
-  /* Hero : canvas 3D masqué, photo seule */
-  #three-canvas { display: none; }
+  /* Hero : gradient renforcé pour lisibilité sous le 3D allégé */
   #hero-bg {
     background: linear-gradient(
         160deg,
         rgba(0,0,0,0.82) 0%,
-        rgba(0,0,0,0.55) 55%,
-        rgba(0,0,0,0.75) 100%
+        rgba(0,0,0,0.52) 55%,
+        rgba(0,0,0,0.72) 100%
       ),
       url('./place-francois-1er.jpg') center / cover no-repeat;
   }
