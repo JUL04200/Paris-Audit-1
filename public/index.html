@@ -4,284 +4,199 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Paris Audit et Conseil | Expertise comptable, audit et conseil à Paris</title>
-    <meta name="description" content="Paris Audit et Conseil, cabinet d'expertise comptable, d'audit et de conseil à Paris depuis 1995, accompagne les dirigeants, PME et entreprises avec une approche rigoureuse et claire." />
-    <meta name="keywords" content="paris audit et conseil, expert comptable paris, cabinet expertise comptable paris, audit paris, conseil dirigeants paris, cabinet comptable 75008" />
-    <meta name="author" content="Paris Audit et Conseil" />
+    <meta name="description" content="Paris Audit et Conseil, cabinet d'expertise comptable, d'audit et de conseil à Paris depuis 1995." />
+    <meta name="keywords" content="paris audit et conseil, expert comptable paris, cabinet expertise comptable paris, audit paris, conseil dirigeants paris" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#050b14" />
-    <link rel="canonical" href="https://www.parisaudit.com/" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Paris Audit et Conseil" />
-    <meta property="og:title" content="Paris Audit et Conseil | Expertise comptable, audit et conseil à Paris" />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:title" content="Paris Audit et Conseil" />
     <meta property="og:description" content="Cabinet d'expertise comptable, d'audit et de conseil à Paris depuis 1995." />
-    <meta property="og:url" content="https://www.parisaudit.com/" />
     <meta property="og:image" content="https://www.parisaudit.com/place-francois-1er.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Paris Audit et Conseil | Expertise comptable, audit et conseil à Paris" />
-    <meta name="twitter:description" content="Cabinet d'expertise comptable, d'audit et de conseil à Paris depuis 1995." />
-    <meta name="twitter:image" content="https://www.parisaudit.com/place-francois-1er.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+
     <div class="cursor" id="cursor"></div>
-    <div class="cursor-trail" id="cursor-trail"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
 
-    <canvas id="bg-canvas"></canvas>
-
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-
-    <header class="site-header" id="site-header">
-      <a class="brand" href="#top">
-        <span class="brand-lockup" aria-label="Paris Audit et Conseil">
-          <span class="brand-name">Paris Audit</span>
-          <span class="brand-subline">
-            <span class="brand-line" aria-hidden="true"></span>
-            <span class="brand-subtitle">Et Conseil</span>
-            <span class="brand-line" aria-hidden="true"></span>
-          </span>
-        </span>
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+      <a class="nav-logo" href="#hero">
+        <span class="nav-logo-main">Paris Audit</span>
+        <span class="nav-logo-sub">Et Conseil</span>
       </a>
-      <nav class="site-nav" aria-label="Navigation principale">
-        <a href="#cabinet">Le cabinet</a>
+      <div class="nav-links">
+        <a href="#about">Le cabinet</a>
         <a href="./laurent-arrouasse.html">Laurent Arrouasse</a>
-        <a href="#expertises">Expertises</a>
-        <a href="#approche">Approche</a>
-        <a href="#contact" class="nav-cta">Contact</a>
-      </nav>
-    </header>
+        <a href="#services">Expertises</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-    <main id="top">
-      <section class="hero">
-        <div class="hero-bg-image"></div>
-        <div class="hero-content">
-          <p class="eyebrow reveal-word">Cabinet parisien depuis 1995</p>
-          <h1 class="hero-title">
-            <span class="line-wrap"><span class="line-inner">Cabinet</span></span>
-            <span class="line-wrap"><span class="line-inner">d'expertise</span></span>
-            <span class="line-wrap"><span class="line-inner accent-word">comptable,</span></span>
-            <span class="line-wrap"><span class="line-inner">d'audit &amp;</span></span>
-            <span class="line-wrap"><span class="line-inner">de conseil.</span></span>
+    <!-- HERO 3D IMMERSIF -->
+    <section class="hero" id="hero">
+      <canvas id="three-canvas"></canvas>
+
+      <div class="hero-text">
+        <div class="hero-title-block">
+          <p class="hero-eyebrow">Cabinet parisien · Depuis 1995</p>
+          <h1 class="hero-h1">
+            <span class="line"><span>Cabinet</span></span>
+            <span class="line"><span>d'expertise</span></span>
+            <span class="line"><span><em>comptable,</em></span></span>
+            <span class="line"><span>d'audit &amp; conseil.</span></span>
           </h1>
-          <p class="trust-line reveal-fade">
-            Depuis plus de 30 ans, le cabinet met son expérience au service
-            de ses clients en privilégiant une relation de confiance, de
-            proximité et de continuité.
-          </p>
-          <div class="hero-actions reveal-fade">
-            <a class="button button-primary" href="#contact">
-              <span>Prendre contact</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a class="button button-ghost" href="#expertises">Voir nos expertises</a>
-          </div>
         </div>
+        <div class="hero-right">
+          <span class="hero-since">Paris · 75008 · 1995</span>
+          <a class="hero-cta" href="#contact">
+            Prendre contact
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
 
-        <aside class="hero-card reveal-fade">
-          <p class="card-label">Informations clés</p>
-          <ul>
-            <li>Expertise comptable et audit</li>
-            <li>11 bis rue Jean Goujon, 75008 Paris</li>
-            <li>Laurent Arrouasse et Florence Arrouasse</li>
-          </ul>
-          <div class="card-badge">
-            <span class="badge-dot"></span>
-            <span>Disponible</span>
-          </div>
-        </aside>
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
 
-        <div class="hero-scroll-hint">
-          <span>Défiler</span>
-          <div class="scroll-line"></div>
-        </div>
-      </section>
+    <!-- MARQUEE -->
+    <div class="marquee-section">
+      <div class="marquee-track">
+        <span>Expertise comptable</span><span class="sep"> ◆ </span>
+        <span>Audit légal</span><span class="sep"> ◆ </span>
+        <span>Conseil aux dirigeants</span><span class="sep"> ◆ </span>
+        <span>Fiscalité</span><span class="sep"> ◆ </span>
+        <span>PME &amp; entreprises</span><span class="sep"> ◆ </span>
+        <span>Paris 8e</span><span class="sep"> ◆ </span>
+        <span>Cabinet parisien depuis 1995</span><span class="sep"> ◆ </span>
+        <span>Expertise comptable</span><span class="sep"> ◆ </span>
+        <span>Audit légal</span><span class="sep"> ◆ </span>
+        <span>Conseil aux dirigeants</span><span class="sep"> ◆ </span>
+        <span>Fiscalité</span><span class="sep"> ◆ </span>
+        <span>PME &amp; entreprises</span><span class="sep"> ◆ </span>
+        <span>Paris 8e</span><span class="sep"> ◆ </span>
+        <span>Cabinet parisien depuis 1995</span><span class="sep"> ◆ </span>
+      </div>
+    </div>
 
-      <section class="stats-band section-reveal" aria-label="Chiffres clés">
-        <div class="stat" data-count="30">
-          <strong class="count-up">30</strong>
-          <span>ans d'expérience</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <strong>Paris 8<sup>e</sup></strong>
-          <span>implantation du cabinet</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <strong>1995</strong>
-          <span>année de création</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <strong>PME &amp; dirigeants</strong>
-          <span>cœur d'accompagnement</span>
-        </div>
-      </section>
+    <!-- STATS -->
+    <section class="stats-section reveal" id="stats">
+      <div class="stat-item">
+        <div class="stat-number">30<span>+</span></div>
+        <div class="stat-label">Années d'expérience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1995</div>
+        <div class="stat-label">Année de création</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Paris<span> 8e</span></div>
+        <div class="stat-label">Implantation du cabinet</div>
+      </div>
+    </section>
 
-      <section class="section confidence-strip section-reveal" aria-label="Éléments de confiance">
-        <div class="confidence-item tilt-card">
-          <div class="ci-icon">◈</div>
-          <strong>30 ans d'expérience</strong>
-          <span>Une présence durable au service des entreprises et des dirigeants.</span>
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+      <div class="about-tag">Le cabinet</div>
+      <div class="about-grid">
+        <h2 class="about-title reveal">
+          Un cabinet de confiance<br/><em>depuis trente ans.</em>
+        </h2>
+        <div class="about-body reveal">
+          <p>Installé à Paris, le cabinet intervient sur les enjeux comptables, fiscaux, organisationnels et de pilotage qui structurent la vie de l'entreprise. Notre ambition est simple : rendre l'information financière utile, compréhensible et exploitable.</p>
+          <p>Nous travaillons avec des dirigeants qui veulent une relation durable, un regard fiable sur leur activité et un interlocuteur capable d'anticiper les sujets avant qu'ils deviennent des urgences.</p>
+          <p>Le cabinet est porté par Laurent Arrouasse et Florence Arrouasse, avec une approche fondée sur la proximité, la rigueur et la continuité de la relation client.</p>
+          <a class="btn-outline" href="./laurent-arrouasse.html">Voir le parcours de Laurent Arrouasse →</a>
         </div>
-        <div class="confidence-item tilt-card">
-          <div class="ci-icon">◈</div>
-          <strong>Cabinet parisien</strong>
-          <span>Une implantation à Paris, au plus près des enjeux de pilotage.</span>
-        </div>
-        <div class="confidence-item tilt-card">
-          <div class="ci-icon">◈</div>
-          <strong>Relation directe</strong>
-          <span>Des échanges clairs avec un interlocuteur impliqué et disponible.</span>
-        </div>
-        <div class="confidence-item tilt-card">
-          <div class="ci-icon">◈</div>
-          <strong>Expertise &amp; audit</strong>
-          <span>Des travaux fiables pour sécuriser, anticiper et décider.</span>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section intro-grid section-reveal" id="cabinet">
-        <div class="intro-left">
-          <p class="eyebrow">Le cabinet</p>
-          <h2>Un cabinet de confiance pour la gestion, le pilotage et la conformité.</h2>
-          <div class="intro-accent-line"></div>
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+      <div class="services-header reveal">
+        <div class="about-tag">Expertises</div>
+        <h2>Des missions construites<br/><em>autour de vos besoins.</em></h2>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="sc-number">01</div>
+          <h3>Expertise<br/>comptable</h3>
+          <p>Tenue, révision, établissement des comptes annuels, tableaux de bord et organisation comptable.</p>
+          <div class="sc-line"></div>
         </div>
-        <div class="intro-panel">
-          <p>
-            Installé à Paris, le cabinet intervient sur les enjeux comptables,
-            fiscaux, organisationnels et de pilotage qui structurent la vie de
-            l'entreprise. Notre ambition est simple : rendre l'information
-            financière utile, compréhensible et exploitable.
-          </p>
-          <p>
-            Nous travaillons avec des dirigeants qui veulent une relation
-            durable, un regard fiable sur leur activité et un interlocuteur
-            capable d'anticiper les sujets avant qu'ils deviennent des urgences.
-          </p>
-          <p>
-            Le cabinet est porté par Laurent Arrouasse et Florence Arrouasse,
-            avec une approche fondée sur la proximité, la rigueur et la
-            continuité de la relation client.
-          </p>
-          <p class="intro-link-row">
-            <a class="button button-primary" href="./laurent-arrouasse.html">
-              <span>Voir le parcours de Laurent Arrouasse</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </p>
+        <div class="service-card">
+          <div class="sc-number">02</div>
+          <h3>Audit</h3>
+          <p>Analyse de la fiabilité des informations financières, contrôle des risques et revue des processus clés.</p>
+          <div class="sc-line"></div>
         </div>
-      </section>
+        <div class="service-card">
+          <div class="sc-number">03</div>
+          <h3>Conseil aux<br/>dirigeants</h3>
+          <p>Aide à la décision, accompagnement dans la croissance, structuration et pilotage de l'activité.</p>
+          <div class="sc-line"></div>
+        </div>
+        <div class="service-card">
+          <div class="sc-number">04</div>
+          <h3>Fiscal &amp;<br/>obligations</h3>
+          <p>Suivi déclaratif, sécurisation des obligations et appui sur les enjeux courants de fiscalité.</p>
+          <div class="sc-line"></div>
+        </div>
+      </div>
+    </section>
 
-      <section class="section section-reveal" id="expertises">
-        <div class="section-heading">
-          <p class="eyebrow">Expertises</p>
-          <h2>Des missions construites autour des besoins concrets des entreprises.</h2>
-        </div>
-        <div class="cards-grid">
-          <article class="service-card tilt-card">
-            <div class="card-number">01</div>
-            <h3>Expertise comptable</h3>
-            <p>Tenue, révision, établissement des comptes annuels, tableaux de bord et organisation comptable.</p>
-            <div class="card-glow"></div>
-          </article>
-          <article class="service-card tilt-card">
-            <div class="card-number">02</div>
-            <h3>Audit</h3>
-            <p>Analyse de la fiabilité des informations financières, contrôle des risques et revue des processus clés.</p>
-            <div class="card-glow"></div>
-          </article>
-          <article class="service-card tilt-card">
-            <div class="card-number">03</div>
-            <h3>Conseil aux dirigeants</h3>
-            <p>Aide à la décision, accompagnement dans la croissance, structuration et pilotage de l'activité.</p>
-            <div class="card-glow"></div>
-          </article>
-          <article class="service-card tilt-card">
-            <div class="card-number">04</div>
-            <h3>Fiscal et obligations</h3>
-            <p>Suivi déclaratif, sécurisation des obligations et appui sur les enjeux courants de fiscalité.</p>
-            <div class="card-glow"></div>
-          </article>
-        </div>
-      </section>
+    <!-- VALEURS -->
+    <section class="values-section">
+      <div class="value-big"><em>Lisibilité</em></div>
+      <div class="value-big">Fiabilité</div>
+      <div class="value-big"><em>Disponibilité</em></div>
+    </section>
 
-      <section class="section spotlight section-reveal" id="approche">
-        <div class="spotlight-copy">
-          <p class="eyebrow">Notre approche</p>
-          <h2>Rigueur technique, relation directe et réactivité au quotidien.</h2>
-          <p>
-            Nous privilégions une relation de proximité avec une information
-            claire, des réponses praticables et un suivi adapté au rythme de
-            chaque structure.
-          </p>
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-left reveal">
+        <div class="about-tag">Contact</div>
+        <h2>Parlons de<br/><em>votre besoin.</em></h2>
+        <div class="contact-info">
+          <p><strong>Paris Audit et Conseil</strong></p>
+          <p>11 bis rue Jean Goujon<br/>75008 Paris</p>
+          <p>INFO@PARISAUDIT.COM</p>
         </div>
-        <div class="values-list">
-          <div class="value-item tilt-card">
-            <strong>Lisibilité</strong>
-            <p>Des explications simples sur des sujets souvent perçus comme complexes.</p>
-          </div>
-          <div class="value-item tilt-card">
-            <strong>Fiabilité</strong>
-            <p>Des travaux structurés, documentés et conformes aux exigences du cabinet.</p>
-          </div>
-          <div class="value-item tilt-card">
-            <strong>Disponibilité</strong>
-            <p>Un accompagnement humain avec un interlocuteur qui suit vos dossiers.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section contact-section section-reveal" id="contact">
-        <div class="contact-copy">
-          <p class="eyebrow">Contact</p>
-          <h2>Parlons de votre besoin.</h2>
-          <p>
-            Utilise le formulaire ci-dessous pour préparer un message vers le
-            cabinet. En ligne, le message est préparé proprement pour
-            l'envoi vers l'adresse du cabinet.
-          </p>
-          <div class="contact-card">
-            <p><strong>Paris Audit et Conseil</strong></p>
-            <p>11 bis rue Jean Goujon, 75008 Paris</p>
-            <p>INFO@PARISAUDIT.COM</p>
-          </div>
-        </div>
-
-        <form class="contact-form" id="contact-form">
+      </div>
+      <form class="contact-form reveal" id="contact-form">
+        <div class="form-row">
           <label>
-            Nom complet
+            <span>Nom complet</span>
             <input type="text" name="name" placeholder="Votre nom" required />
           </label>
           <label>
-            Email
+            <span>Email</span>
             <input type="email" name="email" placeholder="vous@entreprise.fr" required />
           </label>
+        </div>
+        <div class="form-row">
           <label>
-            Entreprise
+            <span>Entreprise</span>
             <input type="text" name="company" placeholder="Nom de votre société" />
           </label>
           <label>
-            Téléphone
+            <span>Téléphone</span>
             <input type="tel" name="phone" placeholder="+33 6 00 00 00 00" />
           </label>
-          <label>
-            Message
-            <textarea name="message" rows="6" placeholder="Expliquez votre besoin, votre activité, et le type d'accompagnement recherché." required></textarea>
-          </label>
-          <button class="button button-primary" type="submit">
-            <span>Envoyer la demande</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <p class="form-status" id="form-status" aria-live="polite"></p>
-        </form>
-      </section>
-    </main>
+        </div>
+        <label class="full">
+          <span>Message</span>
+          <textarea name="message" rows="5" placeholder="Expliquez votre besoin, votre activité, et le type d'accompagnement recherché." required></textarea>
+        </label>
+        <button class="btn-submit" type="submit">Envoyer la demande</button>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+      </form>
+    </section>
 
     <footer class="site-footer">
       <p>© 2025 Paris Audit et Conseil · 11 bis rue Jean Goujon, 75008 Paris</p>
