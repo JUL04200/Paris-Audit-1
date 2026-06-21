@@ -581,7 +581,8 @@ body {
   .nav { padding: 20px 24px; }
   .nav-links { display: none; }
 
-  /* Hero : gradient renforcé pour lisibilité sous le 3D allégé */
+  /* Hero : canvas 3D masqué sur mobile */
+  #three-canvas { display: none; }
   #hero-bg {
     background: linear-gradient(
         160deg,
