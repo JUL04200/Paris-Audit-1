@@ -707,8 +707,6 @@ body {
 }
 
 /* ─── PROFILE PAGE (laurent-arrouasse.html) ─── */
-.static-page { cursor: auto; }
-
 .page-shell { max-width: 1180px; margin: 0 auto; padding: 0 48px; }
 
 .site-header {
