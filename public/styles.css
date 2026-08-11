@@ -761,7 +761,7 @@ body {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 60px;
-  padding: 40px 0 100px;
+  padding: 40px 0 60px;
   border-bottom: 1px solid rgba(201,169,110,0.1);
 }
 .profile-copy h1 {
@@ -770,9 +770,17 @@ body {
   font-weight: 300;
   color: #fff;
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
-.profile-role { font-size: 0.95rem; color: rgba(240,236,228,0.5); line-height: 1.8; }
+.profile-role {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1.5;
+  max-width: 480px;
+}
 .lead-text { font-size: 1.05rem; color: rgba(240,236,228,0.7); line-height: 1.8; margin: 26px 0 20px; }
 .trust-line { font-size: 0.92rem; color: rgba(240,236,228,0.45); line-height: 1.8; }
 
