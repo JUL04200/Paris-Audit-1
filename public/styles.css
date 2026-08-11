@@ -159,6 +159,7 @@ body {
 .hero-h1 .line:nth-child(2) span { animation-delay: 0.55s; }
 .hero-h1 .line:nth-child(3) span { animation-delay: 0.7s; }
 .hero-h1 .line:nth-child(4) span { animation-delay: 0.85s; }
+.hero-h1 .line:nth-child(5) span { animation-delay: 1s; }
 .hero-h1 em { font-style: italic; color: var(--gold); }
 
 .hero-right {
@@ -791,8 +792,7 @@ body {
 .section:last-of-type { border-bottom: none; }
 .section-heading { max-width: 640px; margin-bottom: 44px; }
 .section-heading h2,
-.intro-grid h2,
-.spotlight-copy h2 {
+.intro-grid h2 {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 400;
@@ -809,19 +809,6 @@ body {
 .timeline-period { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
 .timeline-item h3 { font-family: "Cormorant Garamond", serif; font-size: 1.4rem; font-weight: 400; color: #fff; margin-bottom: 8px; }
 .timeline-item p { font-size: 0.85rem; color: rgba(240,236,228,0.4); line-height: 1.8; }
-
-.spotlight { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.spotlight-copy p { font-size: 0.92rem; color: rgba(240,236,228,0.5); line-height: 1.85; margin-top: 20px; }
-.values-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.values-list strong {
-  display: block;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 8px;
-}
-.values-list p { font-size: 0.85rem; color: rgba(240,236,228,0.45); line-height: 1.7; }
 
 .source-note { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 24px; border: 1px solid rgba(201,169,110,0.08); margin-top: 20px; flex-wrap: wrap; }
 .source-note p { font-size: 0.82rem; color: rgba(240,236,228,0.35); line-height: 1.7; }
@@ -845,8 +832,7 @@ body {
 .button:hover, .button-secondary:hover { background: var(--gold); border-color: var(--gold); color: #000; }
 
 @media (max-width: 900px) {
-  .profile-hero, .intro-grid, .spotlight { grid-template-columns: 1fr; }
-  .values-list { grid-template-columns: 1fr; }
+  .profile-hero, .intro-grid { grid-template-columns: 1fr; }
   .profile-card { margin-top: 8px; }
 }
 @media (max-width: 640px) {
